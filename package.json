@@ -1,0 +1,36 @@
+{
+  "name": "ml",
+  "version": "0.0.1",
+  "description": "Javascript machine learning library.",
+  "preferGlobal": true,
+  "bin": {
+    "ml": "bundle.js"
+  },
+  "author": "Adam Cashman",
+  "engines": {
+    "node": "*"
+  },
+  "devDependencies": {
+    "babel-preset-es2015": "^6.24.0",
+    "babel-register": "^6.24.0",
+    "ml-matrix": "^2.3.0",
+    "mocha": "^3.10.10",
+    "path": "^0.12.7",
+    "webpack": "^2.2.1"
+  },
+  "dependencies": {
+    "fs-page": "^1.1.0",
+    "ml-matrix": "^2.3.0"
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ],
+    "sourceMaps": true,
+    "retainLines": true
+  },
+  "scripts": {
+    "test": "mocha-webpack --webpack-config webpack.mocha.config.js \"./test/test.js\"",
+    "test:watch": "npm run test -- --watch"
+  }
+}
