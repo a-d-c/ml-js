@@ -101,7 +101,8 @@ export default class NeuralNetwork extends AbstractModel {
             for(let j=0; j<this._numLabels; j++) {
                 let lclone = layer1.clone();
                 let z2 = lclone.dot(this._outputLayer[j]);
-                let z2s = sigmoid(z2) >= 0.5 ? 1 : 0;
+                //let z2s = sigmoid(z2) >= 0.5 ? 1 : 0;
+                let z2s = sigmoid(z2);
                 y.setRow(j, [z2s])
             }
 
@@ -119,7 +120,6 @@ export default class NeuralNetwork extends AbstractModel {
         computeCost(X, y) {
             debugger;
             const m = X.length;
-            const tiny = 1e-6
             //let _X = X.clone();
             let _y = y.clone();
             
@@ -133,12 +133,12 @@ export default class NeuralNetwork extends AbstractModel {
                     let yk = y.get(k,0);
                     let hxik = hxi.get(k, 0);
 
-                    let loghx = Math.log(hxik + tiny);
+                    let loghx = Math.log(hxik);
                     let loghxNegY = (yk * -1)*loghx;
 
                     let minusY = 1-yk;
                     let oneMinusHxik = 1 - hxik;
-                    let minusLogHx = Math.log(oneMinusHxik + tiny);
+                    let minusLogHx = Math.log(oneMinusHxik);
 
                     let mYMLogHx = minusY * minusLogHx;
 
