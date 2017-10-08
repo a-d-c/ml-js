@@ -6,8 +6,8 @@ import rn from 'random-number'
 
 import { sigmoid, toPolynomialTerms } from '../math_util.js'
 
-import GradientDescent from '../optimizers/gradient_descent.js'
-import NeuralNetwork from '../models/neuralNetwork.js'
+import GradientDescent from '../optimizers/GradientDescent.js'
+import NeuralNetwork from '../models/NeuralNetwork.js'
 
 describe('Neural Network', function() {
 
@@ -113,8 +113,6 @@ debugger;
       var trainingSet = set.training;
       var testSet = set.test;
 
-      debugger;
-
       var inputSize = trainingSet[0].input.length;
 
       let hidden1 = new Matrix(inputSize + 1, 1);
@@ -135,7 +133,5 @@ debugger;
       let network = new NeuralNetwork(null, 2, 2, 1);
       network.nodes = [hidden1, hidden2];
       network.outputLayer = [output];
-
-      debugger;
   })
 })

@@ -3,7 +3,7 @@ import { toMatrix } from '../util.js'
 import { sigmoid, toPolynomialTerms } from '../math_util.js'
 import math from 'mathjs'
 
-import AbstractModel from './abstractModel.js'
+import AbstractModel from './AbstractModel.js'
 
 /**
  * Logistic Regression

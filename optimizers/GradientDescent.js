@@ -1,5 +1,5 @@
 import Matrix from 'ml-matrix'
-import AbstractOptimizer from './abstractOptimizer.js'
+import AbstractOptimizer from './AbstractOptimizer.js'
 
 /**
  * Gradient Descent
@@ -100,31 +100,6 @@ export default class GradientDescent extends AbstractOptimizer {
             let grad = gradient(X, y, theta);
             let gradeXAlpha = grad.clone().mulColumn(0, (this.alpha / m));
             theta = theta.subColumnVector(gradeXAlpha);
-
-           /* let hx_t = h(X, theta)
-                        .subColumnVector(y)
-                        .transpose();
-            
-            let temp = new Matrix(theta.rows, 1);
-
-            for(var j= 0; j<theta.rows; j++) {
-                
-                let col = X.subMatrixColumn([j]);
-                let tempsum = hx_t
-                                .clone()
-                                .mulRowVector(col)
-                                .sum();
-    
-                let cost = (1/m) * tempsum;
-
-                let t = theta.get(j, 0);
-                
-                let tempTheta = t - ((this.alpha/m) * cost);
-                
-                temp.set(j, 0, tempTheta);
-            }
-
-            theta = temp.clone();*/
         }
 
         return theta;

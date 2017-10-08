@@ -6,10 +6,10 @@ import Matrix from 'ml-matrix'
 import parse from  'csv-parse/lib/sync'
 import { sigmoid, toPolynomialTerms } from './math_util.js'
 
-import GradientDescent from './optimizers/gradient_descent.js'
-import NormalEquation from './optimizers/normal_equation.js'
-import LinearRegression from './models/linear_regression.js'
-import LogisticRegression from './models/logistic_regression.js'
+import GradientDescent from './optimizers/GradientDescent.js'
+import NormalEquation from './optimizers/NormalEquation.js'
+import LinearRegression from './models/LinearRegression.js'
+import LogisticRegression from './models/LogisticRegression.js'
 
 var fileInput = document.getElementById('testFile');
 var button = document.getElementById('predButton');

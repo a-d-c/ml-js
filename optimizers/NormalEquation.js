@@ -1,6 +1,6 @@
 import Matrix from 'ml-matrix'
 import VMATH from '../vmath.js';
-import AbstractOptimizer from './abstractOptimizer.js'
+import AbstractOptimizer from './AbstractOptimizer.js'
 /**
  * Normal Equation - fits linear regression via normal equation rather than Gradient Descent
  * @class Normal Equation

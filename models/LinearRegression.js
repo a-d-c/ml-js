@@ -2,7 +2,7 @@ import Matrix from 'ml-matrix'
 import { toMatrix } from '../util.js'
 import math from 'mathjs'
 
-import AbstractModel from './abstractModel.js'
+import AbstractModel from './AbstractModel.js'
 
 /**
  * Linear Regression

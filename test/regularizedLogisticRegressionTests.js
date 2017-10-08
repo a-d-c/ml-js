@@ -6,8 +6,8 @@ import path from 'path'
 import parse from  'csv-parse'
 import { sigmoid, toPolynomialTerms } from '../math_util.js'
 
-import GradientDescent from '../optimizers/gradient_descent.js'
-import LogisticRegression from '../models/logistic_regression.js'
+import GradientDescent from '../optimizers/GradientDescent.js'
+import LogisticRegression from '../models/LogisticRegression.js'
 
 describe('LogisticRegression', function() {
   this.timeout(60000)

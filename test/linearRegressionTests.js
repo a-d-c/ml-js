@@ -6,9 +6,9 @@ import path from 'path'
 import parse from  'csv-parse'
 import { sigmoid } from '../math_util.js'
 
-import GradientDescent from '../optimizers/gradient_descent.js'
-import NormalEquation from '../optimizers/normal_equation.js'
-import LinearRegression from '../models/linear_regression.js'
+import GradientDescent from '../optimizers/GradientDescent.js'
+import NormalEquation from '../optimizers/NormalEquation.js'
+import LinearRegression from '../models/LinearRegression.js'
 
 describe('LinearRegression', function() {
   this.timeout(60000)
