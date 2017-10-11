@@ -6,7 +6,7 @@
   "bin": {
     "ml": "bundle.js"
   },
-  "author": "Adam Cashman",
+  "author": "a-d-c",
   "engines": {
     "node": "*"
   },

@@ -30,19 +30,12 @@ function onImported(e) {
    var output =  e.target.result;
    var records = parse(output, {auto_parse: true});
    
-   //const gdModel = new LinearRegression(new GradientDescent(0.01, 10000));
-   //const nModel = new LinearRegression(new NormalEquation());
-   
-  // performRegression(records, gdModel);
-  // performRegression(records, nModel);
-
   const model = new LogisticRegression(new GradientDescent(0.02, 150000), true, 1);
 
   performRegression(records, model);
 }
 
 function performRegression(records, model) {
-    debugger;
     let numFeatures = records[0].length;
     
     let X = new Matrix(records.length, numFeatures - 1);
@@ -62,26 +55,18 @@ function performRegression(records, model) {
     var predictions = [];
 
     var xData = X;
-    //var xData = X.subMatrix(0, X.rows-1, 1, X.columns-1); //
-    //var xData = X.getColumn(1);
-    //var xData = X.subMatrixColumn()
     var yData = y;
 
     xData.forEach(function(val, i) {
-        //debugger;
         let pred = model.predict(val);
         predictions.push(pred);
     });
 
-    debugger;
     onRegressionComplete(xData, yData, predictions, model);
 }
 
-function onRegressionComplete(X, y, predictions, model) {
-    //var data = prepChartData(X, y, predictions);
-    
+function onRegressionComplete(X, y, predictions, model) {  
     model.plotData(X, y, predictions);
-    //drawChart(data, model);
 }
 
 function predict(e) {
